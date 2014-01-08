@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Bodies.o \
-	${OBJECTDIR}/Vector.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/src/Bodies.o \
+	${OBJECTDIR}/src/Vector.o \
+	${OBJECTDIR}/src/main.o
 
 
 # C Compiler Flags
@@ -64,20 +64,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gllamp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	g++ -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gllamp ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Bodies.o: Bodies.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Bodies.o: src/Bodies.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Bodies.o Bodies.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Bodies.o src/Bodies.cpp
 
-${OBJECTDIR}/Vector.o: Vector.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Vector.o: src/Vector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vector.o Vector.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Vector.o src/Vector.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/main.o: src/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

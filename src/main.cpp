@@ -35,16 +35,6 @@ void lampLight() {
     glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 30.0);
 }
 
-void turnOnDefaultLight() {
-    glPushMatrix();
-    glTranslated(10.0, 0, 10.0);
-    defaultLight();
-    glMaterialfv(GL_FRONT, GL_EMISSION, RED);
-    bodies.drawCube(0.5);
-    glMaterialfv(GL_FRONT, GL_EMISSION, BLACK);
-    glPopMatrix();
-}
-
 void display(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
